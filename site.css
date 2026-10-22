@@ -5,3 +5,52 @@
 @media(max-width:850px){.top-inner>span:last-child{display:none}.nav-wrap{min-height:72px}.nav-links{display:none;position:fixed;top:var(--menu-top,75px);right:0;left:0;background:white;padding:22px;border-bottom:1px solid var(--line);box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:5px}.nav-links.is-open{display:flex}.nav-links a{font-size:14px;padding:9px}.menu-btn{display:inline-flex}.hero-content{grid-template-columns:1fr;gap:10px;padding-top:55px}.hero-visual{max-width:500px;margin:auto}.hero{padding-bottom:25px}.about-grid,.faq-grid,.booking-grid{grid-template-columns:1fr;gap:35px}.about-graphic{min-height:290px;order:2}.cards-3{grid-template-columns:repeat(2,1fr)}.strip-item{padding:19px;gap:10px}.strip-icon{min-width:44px}.contact-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:repeat(2,1fr)}.detail-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.container{width:min(100% - 30px,1170px)}.section{padding:62px 0}.topbar{font-size:10px}.nav-wrap{gap:5px}.brand{min-width:0;gap:7px}.brand-mark{width:64px;height:54px}.brand-copy strong{font-size:13px}.brand-copy small{font-size:8px;max-width:188px}.nav-cta>.btn{display:none}.hero-content{padding-top:40px;min-height:auto}.hero h1{font-size:33px}.hero-sub{font-size:16px}.hero-visual{margin-top:5px}.hero-small-badge{font-size:10px}.hero-note{font-size:11px}.summary-strip{margin-top:0}.strip-card{grid-template-columns:1fr}.strip-item{padding:15px 18px}.strip-item:not(:last-child){border-left:0;border-bottom:1px solid var(--line)}.cards-3,.steps,.guide-grid,.gallery-grid{grid-template-columns:1fr}.service-graphic{height:145px}.about-graphic{padding:20px}.about-logo{width:200px}.section-head.between{align-items:start;flex-direction:column}.faq-visual{min-height:235px}.form-grid{grid-template-columns:1fr}.booking-form,.contact-card{padding:21px}.book-copy h2{font-size:29px}.map-card{min-height:280px}.page-hero{padding:45px 0}.footer-grid{grid-template-columns:1fr;gap:26px}.footer-bottom{flex-direction:column;align-items:start;padding-bottom:90px}.float-call{display:none}.mobile-bar{position:fixed;display:grid;grid-template-columns:repeat(4,1fr);bottom:0;right:0;left:0;background:rgba(255,255,255,.98);border-top:1px solid var(--line);z-index:85;padding:8px 8px max(8px,env(safe-area-inset-bottom));box-shadow:0 -10px 25px rgba(25,75,95,.06)}.mobile-bar a{display:flex;align-items:center;flex-direction:column;gap:2px;font-size:10px;font-weight:800;color:#5c7284}.mobile-bar a.is-emphasis{color:#19846f}.mobile-bar svg{width:21px;height:21px}.toast{bottom:84px;left:16px;right:16px;max-width:unset}.detail-grid .side-panel{order:2}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+
+/* v2 doctor photograph and accessible slideshow */
+:root{--green:#39bf5a;--blue:#23769b;--blue2:#124663}
+.social-pill{width:33px;height:33px;display:grid;place-items:center;background:#eef4ff;color:#286fc5;font:900 22px Arial,sans-serif;border-radius:10px;border:1px solid #d5e7ff}
+.facebook-link{color:#bfe1ff!important;font-weight:800}
+.clinic-slider{background:radial-gradient(circle at 10% 0%,#d5f4ea 0,transparent 40%),linear-gradient(120deg,#f1faff,#f6fcff 42%,#e8f4f8);position:relative;overflow:hidden;padding:34px 0 26px}
+.slider-frame{position:relative}
+.clinic-slide{display:none;grid-template-columns:1.05fr .95fr;align-items:center;min-height:550px;gap:55px;animation:slideAppear .55s ease both}
+.clinic-slide.is-active{display:grid}
+@keyframes slideAppear{from{opacity:.2;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.slider-copy{padding:28px 0 12px}
+.slide-tag{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid #c7e9e3;color:#17815c;padding:6px 14px;border-radius:99px;font-size:12px;font-weight:900}
+.slide-tag:before{content:'';width:8px;height:8px;border-radius:50%;background:var(--green)}
+.clinic-slide h1{font-size:clamp(29px,4.5vw,51px);font-weight:900;line-height:1.5;letter-spacing:-.8px;margin:19px 0 8px;color:#164968}
+.slide-description{font-size:15px;line-height:2.2;color:#496b7b;max-width:590px;margin:11px 0}
+.slide-specialty{font-size:13px;font-weight:800;color:#2b88a5;line-height:2}
+.slide-actions{display:flex;align-items:center;flex-wrap:wrap;gap:11px;margin:23px 0}
+.slide-hours{display:flex;align-items:center;gap:8px;color:#56788b;font-size:12px;margin-top:20px}
+.slide-hours svg{color:#31bc7f}
+.slide-picture{position:relative;width:100%;height:440px;border-radius:30px;overflow:hidden;box-shadow:0 28px 65px #1b597126;border:8px solid #fff;background:#e5f4f8}
+.slide-picture img{width:100%;height:100%;object-fit:cover}
+.slide-picture.portrait img{object-position:center 26%}
+.slide-picture.illustration img{object-fit:contain;padding:12px;background:linear-gradient(145deg,#e7f7ff,#effaf2)}
+.slide-picture-caption{position:absolute;bottom:19px;right:19px;background:#fffffff2;border-radius:14px;padding:9px 17px;font-weight:800;font-size:13px;color:#1c5673;box-shadow:0 8px 22px #173c5520}
+.slider-controls{display:flex;align-items:center;justify-content:center;gap:13px;min-height:44px;margin-top:-8px;position:relative;z-index:3}
+.slider-controls>button{width:37px;height:37px;display:grid;place-items:center;border-radius:11px;border:1px solid #cde4ec;background:#fff;color:#1b698b}
+.slider-controls>[data-slide-prev] svg{transform:rotate(180deg)}
+.slider-controls>[data-slide-toggle]{font-weight:900;font-size:16px}
+.slider-dots{display:flex;align-items:center;gap:8px}
+.slider-dots button{border:0;width:10px;height:10px;background:#a3c8d5;border-radius:20px;padding:0;transition:width .25s,background .25s}
+.slider-dots button[aria-current=true]{width:29px;background:#23946e}
+.doctor-section{background:#fff}
+.doctor-grid{display:grid;grid-template-columns:.81fr 1.19fr;align-items:center;gap:72px}
+.doctor-photo{position:relative;border:9px solid white;border-radius:27px;overflow:hidden;box-shadow:0 22px 65px #164f7524;background:#eaf1f5;min-height:410px}
+.doctor-photo img{width:100%;height:480px;object-fit:cover;object-position:center 27%}
+.doctor-photo-label{position:absolute;bottom:15px;left:15px;right:15px;background:#174d6ae8;backdrop-filter:blur(6px);padding:13px 20px;color:white;border-radius:15px;display:flex;flex-direction:column}
+.doctor-photo-label b{font-size:18px}.doctor-photo-label span{font-size:12px;color:#d4f8ed}
+.doctor-role{display:inline-block;color:#15875d;font-weight:900;margin-bottom:13px}
+.doctor-text h3{font-size:17px;margin:17px 0 11px}
+.qualification-list{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0 25px}
+.qualification-item{display:flex;gap:8px;align-items:flex-start;background:#f3faf8;padding:10px 12px;border-radius:10px;font-size:11.8px;font-weight:700;color:#355b69}
+.qualification-item svg{color:#1a9b76;flex-shrink:0;margin-top:3px}
+.about-doctor-photo{min-height:380px}.about-doctor-photo img{height:420px}
+.about-qualification-list{columns:2;list-style:none;padding:0;margin:18px 0 25px}
+.about-qualification-list li{break-inside:avoid;margin:4px 0 9px;padding:6px 10px;background:#f0f8f7;border-right:3px solid #38be89;font-size:13px}
+@media(max-width:850px){.clinic-slide{grid-template-columns:1fr;min-height:auto;gap:16px}.slide-picture{height:350px;max-width:620px;margin:auto}.slider-copy{padding:10px 0 0}.doctor-grid{grid-template-columns:1fr;gap:28px}.doctor-photo{max-width:530px;width:100%;margin:auto}.qualification-list{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.clinic-slider{padding:20px 0 17px}.clinic-slide h1{font-size:27px;line-height:1.55;margin-top:12px}.slide-description{font-size:13px;line-height:2}.slide-specialty{font-size:11px}.slide-picture{height:295px;max-width:500px;border-width:5px;border-radius:24px}.slide-picture.portrait img{object-position:center 19%}.slider-controls{margin-top:12px}.slide-actions{margin:15px 0}.slide-actions .btn{font-size:11.5px;padding:11px 14px}.slide-hours{font-size:10px;line-height:1.7}.doctor-grid{gap:25px}.doctor-photo{min-height:0}.doctor-photo img{height:375px}.qualification-list{grid-template-columns:1fr}.about-qualification-list{columns:1}.social-pill{width:30px;height:30px;font-size:18px}}
+@media(prefers-reduced-motion:reduce){.clinic-slide{animation:none}}
