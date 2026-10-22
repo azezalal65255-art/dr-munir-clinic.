@@ -72,6 +72,7 @@ export async function createStore(forceDemo=false){
   const documentData = snap => ({id:snap.id,...snap.data()});
   return {
     mode:'firebase',
+    async exportData(){const snap=await dbSDK.getDoc(settingsRef);const content={};for(const k of collections){const docs=await dbSDK.getDocs(dbSDK.collection(db,k));content[k]=docs.docs.map(documentData)}return {settings:snap.exists()?{...clone(defaultSettings),...snap.data()}:clone(defaultSettings),content};},
     get isSeeded(){return seeded},
     async getSettings(){const snap=await dbSDK.getDoc(settingsRef);seeded=snap.exists();return snap.exists()?{...clone(defaultSettings),...snap.data()}:clone(defaultSettings)},
     async list(kind,publicOnly=false){if(!collections.includes(kind))throw Error('مجموعة غير صحيحة');const c=dbSDK.collection(db,kind);const q=publicOnly?dbSDK.query(c,dbSDK.where('published','==',true)):c;const snap=await dbSDK.getDocs(q);if(publicOnly&&!seeded&&snap.empty)return clone(initialContent[kind]);return snap.docs.map(documentData)},
