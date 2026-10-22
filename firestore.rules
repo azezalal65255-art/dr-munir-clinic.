@@ -19,6 +19,10 @@ service cloud.firestore {
       allow get, list: if isAdmin() || resource.data.published == true;
       allow write: if isAdmin();
     }
+    match /exams/{id} {
+      allow get, list: if isAdmin() || resource.data.published == true;
+      allow write: if isAdmin();
+    }
     match /articles/{id} {
       allow get, list: if isAdmin() || resource.data.published == true;
       allow write: if isAdmin();

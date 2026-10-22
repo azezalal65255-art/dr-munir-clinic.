@@ -2,7 +2,7 @@ import {firebaseConfig} from './config.js';
 import {defaultSettings,initialContent} from './data.js';
 
 const LOCAL_KEY = 'dr-munir-clinic-local-draft-v3';
-const collections = ['services','faqs','articles','gallery'];
+const collections = ['services','exams','faqs','articles','gallery'];
 const clone = obj => JSON.parse(JSON.stringify(obj));
 let publishedState = {settings:clone(defaultSettings),content:clone(initialContent)};
 const inEditor = typeof location!=='undefined' && /\/admin\.html$/.test(location.pathname);
@@ -10,6 +10,7 @@ const isPreview = typeof location!=='undefined' && new URLSearchParams(location.
 function validateContentData(raw){
   if(!raw || typeof raw!=='object' || !raw.settings || !raw.content)throw Error('ملف البيانات غير صالح');
   for(const key of collections){
+    if(key==='exams'&&!Array.isArray(raw.content[key]))raw.content[key]=clone(initialContent.exams);
     if(!Array.isArray(raw.content[key]) || raw.content[key].length>300)throw Error(`قسم ${key} غير صالح`);
     for(const item of raw.content[key])if(!item || typeof item!=='object'||typeof item.id!=='string'||item.id.length>150)throw Error('يوجد سجل غير صالح');
   }
@@ -98,6 +99,16 @@ export async function createStore(forceDemo=false){
     signOut(){return authSDK.signOut(auth)},
     onAuth(cb){return authSDK.onAuthStateChanged(auth,cb)},
     async checkAdmin(user){if(!user)return false;const snap=await dbSDK.getDoc(dbSDK.doc(db,'admins',user.uid));return Boolean(snap.exists()&&snap.data().active===true)},
+    async seedMissingExams(){
+      if(!auth.currentUser || !(await this.checkAdmin(auth.currentUser)))throw Error('صلاحية المسؤول مطلوبة');
+      let count=0;
+      for(const item of initialContent.exams){
+        const ref=dbSDK.doc(db,'exams',item.id);
+        const existing=await dbSDK.getDoc(ref);
+        if(!existing.exists()){const {id,...data}=item;await dbSDK.setDoc(ref,{...data,updatedAt:dbSDK.serverTimestamp()});count++}
+      }
+      return count;
+    },
     async initialize(){
       const snap=await dbSDK.getDoc(settingsRef);
       if(snap.exists())return false;
