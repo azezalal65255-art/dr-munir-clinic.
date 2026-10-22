@@ -1,0 +1,49 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function isAdmin() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+        && get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.active == true;
+    }
+    match /admins/{uid} {
+      allow get: if signedIn() && request.auth.uid == uid;
+      allow list, create, update, delete: if false;
+    }
+    match /settings/{id} {
+      allow read: if id == 'main';
+      allow write: if id == 'main' && isAdmin();
+    }
+    match /services/{id} {
+      allow get, list: if isAdmin() || resource.data.published == true;
+      allow write: if isAdmin();
+    }
+    match /articles/{id} {
+      allow get, list: if isAdmin() || resource.data.published == true;
+      allow write: if isAdmin();
+    }
+    match /faqs/{id} {
+      allow get, list: if isAdmin() || resource.data.published == true;
+      allow write: if isAdmin();
+    }
+    match /gallery/{id} {
+      allow get, list: if isAdmin() || resource.data.published == true;
+      allow write: if isAdmin();
+    }
+    match /appointments/{id} {
+      allow get, list, update, delete: if isAdmin();
+      allow create: if
+        request.resource.data.keys().hasOnly(['name','phone','service','date','time','status','createdAt'])
+        && request.resource.data.keys().hasAll(['name','phone','service','date','time','status','createdAt'])
+        && request.resource.data.name is string && request.resource.data.name.size() >= 3 && request.resource.data.name.size() <= 70
+        && request.resource.data.phone is string && request.resource.data.phone.matches('^[+0-9-]{7,18}$')
+        && request.resource.data.service is string && request.resource.data.service.size() >= 2 && request.resource.data.service.size() <= 110
+        && request.resource.data.date is string && request.resource.data.date.matches('^\\d{4}-\\d{2}-\\d{2}$')
+        && request.resource.data.time is string && request.resource.data.time.matches('^\\d{2}:\\d{2}$')
+        && request.resource.data.status == 'pending'
+        && request.resource.data.createdAt == request.time;
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}
