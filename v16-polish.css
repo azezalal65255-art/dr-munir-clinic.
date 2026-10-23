@@ -1,0 +1,33 @@
+/* V16: visual polish and accessible mobile navigation */
+:root{--v16-deep:#084b62;--v16-green:#148458;--v16-ink:#173d4d}
+body{font-size:16px!important;color:var(--v16-ink)!important;line-height:1.85!important}
+.v15-header{position:sticky!important;top:0!important;z-index:2000!important}
+.v15-nav a{font-size:15px!important;color:#123f51!important}
+.v15-nav a:focus-visible{outline:3px solid #168b64}
+.v15-socials a{min-height:52px!important;font-size:15px!important;font-weight:800!important}
+.v15-soc-symbol{width:32px;height:32px;flex:0 0 32px}
+.v15-soc-symbol svg{width:27px!important;height:27px!important}
+.v15-values-overrides{background:linear-gradient(125deg,#f0faf3 0%,#fff 45%,#e2f3e9 100%)!important;border:1px solid #cce6d8!important;box-shadow:0 12px 35px #104e3820!important}
+.v15-values-overrides .v8-value{background:#fff!important;border:1px solid #d7e9dd!important;border-radius:18px!important;box-shadow:0 7px 19px #104e3812!important}
+.v15-values-overrides h2,.v15-values-overrides h3{color:#07573b!important}
+.v15-values-overrides p,.v15-values-overrides li{color:#254d43!important}
+.v15-visit-overrides{background:linear-gradient(135deg,#f6faf7,#e4f4ed 60%,#f9fdfb)!important;border-top:3px solid #198358!important}
+.v15-visit-overrides .fx-visit article{background:#fff!important;border:1px solid #d4e7dc!important;box-shadow:0 8px 24px #104e3812!important;border-radius:18px!important}
+.v15-card h3,.v15-group-heading h2{color:#0c4359!important}
+.v15-card p,.v15-group-heading p{color:#405b64!important;font-size:14px!important;line-height:1.85!important}
+.v15-card img{object-fit:cover}
+.v15-simple-main{padding-block:30px 70px!important}
+.v15-doctor-hero{background:linear-gradient(130deg,#f3fbf7,#fff)!important;border:1px solid #d6e9df!important}
+.v15-doctor-hero h1{color:#0b5266!important}
+.v15-info-grid article{border:1px solid #d9e9e7!important}
+@media(max-width:760px){
+ .v15-header[data-open=true]{position:relative!important;top:auto!important}
+ .v15-header[data-open=true] .v15-nav{position:static!important;display:flex!important;max-height:none!important;overflow:visible!important}
+ .v15-header:not([data-open=true]) .v15-nav{display:none!important}
+ .v15-brand{max-width:calc(100% - 75px)!important}
+ .v15-nav a{font-size:16px!important;min-height:52px!important}
+ .v15-card p{font-size:13.5px!important}
+ .v15-group-heading p{font-size:14px!important}
+ .v15-socials a{min-height:54px!important}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
