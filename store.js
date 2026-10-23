@@ -1,8 +1,8 @@
 import {firebaseConfig} from './config.js';
 import {defaultSettings,initialContent} from './data.js';
 
-const LOCAL_KEY = 'dr-munir-clinic-local-draft-v3';
-const collections = ['services','exams','faqs','articles','gallery'];
+const LOCAL_KEY = 'dr-munir-clinic-local-draft-v3'; // Retain drafts made with V3-V6
+const collections = ['services','exams','faqs','articles','gallery','events','jobs','research','videos'];
 const clone = obj => JSON.parse(JSON.stringify(obj));
 let publishedState = {settings:clone(defaultSettings),content:clone(initialContent)};
 const inEditor = typeof location!=='undefined' && /\/admin\.html$/.test(location.pathname);
@@ -10,7 +10,7 @@ const isPreview = typeof location!=='undefined' && new URLSearchParams(location.
 function validateContentData(raw){
   if(!raw || typeof raw!=='object' || !raw.settings || !raw.content)throw Error('ملف البيانات غير صالح');
   for(const key of collections){
-    if(key==='exams'&&!Array.isArray(raw.content[key]))raw.content[key]=clone(initialContent.exams);
+    if(!Array.isArray(raw.content[key]) && Array.isArray(initialContent[key]))raw.content[key]=clone(initialContent[key]);
     if(!Array.isArray(raw.content[key]) || raw.content[key].length>300)throw Error(`قسم ${key} غير صالح`);
     for(const item of raw.content[key])if(!item || typeof item!=='object'||typeof item.id!=='string'||item.id.length>150)throw Error('يوجد سجل غير صالح');
   }
@@ -59,10 +59,10 @@ export async function createStore(forceDemo=false){
   }
 
   const [appSDK,dbSDK,authSDK,storageSDK] = await Promise.all([
-    import('https://www.gstatic.com/firebase12.19.0/firebase-app.js'),
-    import('https://www.gstatic.com/firebase12.19.0/firebase-firestore.js'),
-    import('https://www.gstatic.com/firebase12.19.0/firebase-auth.js'),
-    import('https://www.gstatic.com/firebase12.19.0/firebase-storage.js')
+    import('https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js'),
+    import('https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js'),
+    import('https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js'),
+    import('https://www.gstatic.com/firebasejs/12.19.0/firebase-storage.js')
   ]);
   const app=appSDK.initializeApp(firebaseConfig);
   const db=dbSDK.getFirestore(app);

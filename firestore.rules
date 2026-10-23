@@ -35,6 +35,22 @@ service cloud.firestore {
       allow get, list: if isAdmin() || resource.data.published == true;
       allow write: if isAdmin();
     }
+    match /events/{id} {
+      allow get, list: if isAdmin() || resource.data.published == true;
+      allow create, update, delete: if isAdmin();
+    }
+    match /jobs/{id} {
+      allow get, list: if isAdmin() || resource.data.published == true;
+      allow create, update, delete: if isAdmin();
+    }
+    match /research/{id} {
+      allow get, list: if isAdmin() || resource.data.published == true;
+      allow create, update, delete: if isAdmin();
+    }
+    match /videos/{id} {
+      allow get, list: if isAdmin() || resource.data.published == true;
+      allow create, update, delete: if isAdmin();
+    }
     match /appointments/{id} {
       allow get, list, update, delete: if isAdmin();
       allow create: if
