@@ -1,0 +1,9 @@
+(()=>{'use strict';const tel='967782007272';const groups={jobs:'طلب اهتمام بالعمل في العيادة',complaints:'شكوى / مقترح من موقع عيادة د. منير الشكري',survey:'تقييم خدمات عيادة د. منير الشكري'};
+const clean=v=>String(v||'').trim().replace(/[\u0000-\u001f]/g,' ').slice(0,900);
+const formList=document.querySelectorAll('form[data-v6-form]');
+formList.forEach(f=>f.addEventListener('submit',ev=>{ev.preventDefault();const status=f.querySelector('.v6-form-message');const type=f.dataset.v6Form;status.textContent='';if(!f.checkValidity()){f.reportValidity();return;}const v=Object.fromEntries(new FormData(f).entries());
+let lines=['السلام عليكم،',groups[type]];
+if(type==='jobs'){if(clean(v.name).length<3){status.textContent='يرجى إدخال اسم صحيح.';return;}lines.push('الاسم: '+clean(v.name),'التواصل: '+clean(v.phone),'المجال: '+clean(v.field),'الخبرة: '+clean(v.experience));if(v.summary)lines.push('نبذة: '+clean(v.summary));lines.push('سأرسل السيرة الذاتية يدويًا بعد فتح واتساب، إن طلبت العيادة ذلك.');}
+else if(type==='complaints'){lines.push('نوع الملاحظة: '+clean(v.category));if(v.name)lines.push('الاسم: '+clean(v.name));if(v.phone)lines.push('التواصل: '+clean(v.phone));lines.push('الملاحظة: '+clean(v.message));}
+else if(type==='survey'){const titles=['سهولة التواصل','وضوح معلومات الخدمات','سهولة الوصول','التعامل والاستقبال','تنظيم المواعيد','التقييم العام'];titles.forEach((t,i)=>lines.push(t+': '+clean(v['rate'+(i+1)])));if(v.suggestion)lines.push('الاقتراح: '+clean(v.suggestion));}
+const link='https://wa.me/'+tel+'?text='+encodeURIComponent(lines.join('\n'));const a=document.createElement('a');a.href=link;a.target='_blank';a.rel='noopener noreferrer';a.click();status.textContent='تم فتح واتساب لإعداد الرسالة. لإتمام الإرسال اضغط زر إرسال بنفسك داخل واتساب.';}));})();
