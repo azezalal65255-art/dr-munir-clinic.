@@ -1,3 +1,7 @@
 User-agent: *
-Allow: /dr-munir-clinic./
+Allow: /
+Disallow: /dr-munir-clinic./admin.html
+Disallow: /dr-munir-clinic./home-editor.html
+Disallow: /dr-munir-clinic./exam-editor.html
 Sitemap: https://azezalal65255-art.github.io/dr-munir-clinic./sitemap.xml
+Disallow: /dr-munir-clinic./firebase-setup.html

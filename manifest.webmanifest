@@ -1,0 +1,20 @@
+{
+  "name": "عيادة د. منير الشكري للأشعة التشخيصية",
+  "short_name": "عيادة د. منير",
+  "description": "السونار والدوبلر والخزعات والقساطر بصنعاء",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b6283",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ]
+}

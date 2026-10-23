@@ -33,8 +33,6 @@ function apply(d){
   main.appendChild(el);
  }
  for(const [id,el] of fixed)if(!seen.has(id))main.appendChild(el);
- // إبقاء بطاقات معلومات العيادة بعد أول قسم رئيسي وليس فوق السلايدر
- const stats=main.querySelector(':scope > .fx-stats');const hero=main.querySelector('[data-home-section="home-section-1"]');if(stats&&hero)hero.after(stats);
  if(d.appearance){
    const hex=/^#[0-9a-f]{6}$/i;
    const root=document.documentElement;

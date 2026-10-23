@@ -10,97 +10,113 @@
           "id": "exam-01",
           "title": "سونار البطن والحوض العام",
           "visible": true,
-          "order": 1
+          "order": 1,
+          "image": "exam-01.webp"
         },
         {
           "id": "exam-02",
           "title": "سونار الكبد والمرارة والبنكرياس",
           "visible": true,
-          "order": 2
+          "order": 2,
+          "image": "exam-02.webp"
         },
         {
           "id": "exam-03",
           "title": "سونار الكلى والمسالك البولية",
           "visible": true,
-          "order": 3
+          "order": 3,
+          "image": "exam-03.webp"
         },
         {
           "id": "exam-04",
           "title": "سونار المثانة والبروستات",
           "visible": true,
-          "order": 4
+          "order": 4,
+          "image": "exam-04.webp"
         },
         {
           "id": "exam-05",
           "title": "سونار الرحم والمبيضين",
           "visible": true,
-          "order": 5
+          "order": 5,
+          "image": "exam-05.webp"
         },
         {
           "id": "exam-06",
           "title": "سونار الغدة الدرقية",
           "visible": true,
-          "order": 6
+          "order": 6,
+          "image": "exam-06.webp"
         },
         {
           "id": "exam-07",
           "title": "سونار الغدد اللعابية والرقبة",
           "visible": true,
-          "order": 7
+          "order": 7,
+          "image": "exam-07.webp"
         },
         {
           "id": "exam-08",
           "title": "سونار العقد اللمفاوية",
           "visible": true,
-          "order": 8
+          "order": 8,
+          "image": "exam-08.webp"
         },
         {
           "id": "exam-09",
           "title": "سونار الثدي",
           "visible": true,
-          "order": 9
+          "order": 9,
+          "image": "exam-09.webp"
         },
         {
           "id": "exam-10",
           "title": "سونار الخصية وكيس الصفن",
           "visible": true,
-          "order": 10
+          "order": 10,
+          "image": "exam-10.webp"
         },
         {
           "id": "exam-11",
           "title": "سونار الأنسجة الرخوة والكتل السطحية",
           "visible": true,
-          "order": 11
+          "order": 11,
+          "image": "exam-11.webp"
         },
         {
           "id": "exam-12",
           "title": "سونار جدار البطن والفتق",
           "visible": true,
-          "order": 12
+          "order": 12,
+          "image": "exam-12.webp"
         },
         {
           "id": "exam-13",
           "title": "سونار الزائدة الدودية",
           "visible": true,
-          "order": 13
+          "order": 13,
+          "image": "exam-13.webp"
         },
         {
           "id": "exam-14",
           "title": "سونار الحمل ومتابعة الجنين",
           "visible": true,
-          "order": 14
+          "order": 14,
+          "image": "exam-14.webp"
         },
         {
           "id": "exam-15",
           "title": "سونار دماغ الرضع",
           "visible": true,
-          "order": 15
+          "order": 15,
+          "image": "exam-15.webp"
         },
         {
           "id": "exam-16",
           "title": "سونار الورك الولادي",
           "visible": true,
-          "order": 16
+          "order": 16,
+          "image": "exam-16.webp"
         }
       ],
       "description": "تصوير الأعضاء والأنسجة بالموجات فوق الصوتية، ويشمل فحوص البطن والحوض والرقبة والحمل.",
@@ -116,73 +132,85 @@
           "id": "exam-17",
           "title": "دوبلر شرايين الرقبة (السباتي)",
           "visible": true,
-          "order": 1
+          "order": 1,
+          "image": "exam-17.webp"
         },
         {
           "id": "exam-18",
           "title": "دوبلر أوردة الرقبة",
           "visible": true,
-          "order": 2
+          "order": 2,
+          "image": "exam-18.webp"
         },
         {
           "id": "exam-19",
           "title": "دوبلر شرايين الأطراف العلوية",
           "visible": true,
-          "order": 3
+          "order": 3,
+          "image": "exam-19.webp"
         },
         {
           "id": "exam-20",
           "title": "دوبلر أوردة الأطراف العلوية",
           "visible": true,
-          "order": 4
+          "order": 4,
+          "image": "exam-20.webp"
         },
         {
           "id": "exam-21",
           "title": "دوبلر شرايين الأطراف السفلية",
           "visible": true,
-          "order": 5
+          "order": 5,
+          "image": "exam-21.webp"
         },
         {
           "id": "exam-22",
           "title": "دوبلر أوردة الأطراف السفلية (تشخيص الجلطات)",
           "visible": true,
-          "order": 6
+          "order": 6,
+          "image": "exam-22.webp"
         },
         {
           "id": "exam-23",
           "title": "دوبلر الشريان الأورطي البطني",
           "visible": true,
-          "order": 7
+          "order": 7,
+          "image": "exam-23.webp"
         },
         {
           "id": "exam-24",
           "title": "دوبلر شرايين وأوردة الكلى",
           "visible": true,
-          "order": 8
+          "order": 8,
+          "image": "exam-24.webp"
         },
         {
           "id": "exam-25",
           "title": "دوبلر الكبد والوريد البابي",
           "visible": true,
-          "order": 9
+          "order": 9,
+          "image": "exam-25.webp"
         },
         {
           "id": "exam-26",
           "title": "دوبلر الحبل السري والرحم للجنين",
           "visible": true,
-          "order": 10
+          "order": 10,
+          "image": "exam-26.webp"
         },
         {
           "id": "exam-27",
           "title": "دوبلر الخصية (دوالي الخصية)",
           "visible": true,
-          "order": 11
+          "order": 11,
+          "image": "exam-27.webp"
         },
         {
           "id": "exam-28",
           "title": "دوبلر الدوالي",
           "visible": true,
-          "order": 12
+          "order": 12,
+          "image": "exam-28.webp"
         }
       ],
       "description": "تقييم حركة الدم وتدفقه داخل الشرايين والأوردة بحسب الطلب الطبي.",
@@ -198,73 +226,85 @@
           "id": "exam-29",
           "title": "خزعة الغدة الدرقية بالإبرة الدقيقة FNA",
           "visible": true,
-          "order": 1
+          "order": 1,
+          "image": "exam-29.webp"
         },
         {
           "id": "exam-30",
           "title": "خزعة الغدة الدرقية بالإبرة السميكة True-Cut",
           "visible": true,
-          "order": 2
+          "order": 2,
+          "image": "exam-30.webp"
         },
         {
           "id": "exam-31",
           "title": "خزعة العقد اللمفاوية بالرقبة",
           "visible": true,
-          "order": 3
+          "order": 3,
+          "image": "exam-31.webp"
         },
         {
           "id": "exam-32",
           "title": "خزعة الثدي",
           "visible": true,
-          "order": 4
+          "order": 4,
+          "image": "exam-32.webp"
         },
         {
           "id": "exam-33",
           "title": "خزعة الأنسجة الرخوة والكتل السطحية",
           "visible": true,
-          "order": 5
+          "order": 5,
+          "image": "exam-33.webp"
         },
         {
           "id": "exam-34",
           "title": "خزعة الكبد",
           "visible": true,
-          "order": 6
+          "order": 6,
+          "image": "exam-34.webp"
         },
         {
           "id": "exam-35",
           "title": "خزعة الكلى",
           "visible": true,
-          "order": 7
+          "order": 7,
+          "image": "exam-35.webp"
         },
         {
           "id": "exam-36",
           "title": "سحب عينة سائل البطن التشخيصي",
           "visible": true,
-          "order": 8
+          "order": 8,
+          "image": "exam-36.webp"
         },
         {
           "id": "exam-37",
           "title": "سحب عينة سائل الصدر التشخيصي",
           "visible": true,
-          "order": 9
+          "order": 9,
+          "image": "exam-37.webp"
         },
         {
           "id": "exam-38",
           "title": "سحب عينات الخراجات والتجمعات",
           "visible": true,
-          "order": 10
+          "order": 10,
+          "image": "exam-38.webp"
         },
         {
           "id": "exam-39",
           "title": "سحب أكياس الكبد والكلى والمبيض",
           "visible": true,
-          "order": 11
+          "order": 11,
+          "image": "exam-39.webp"
         },
         {
           "id": "exam-40",
           "title": "سحب عينات سوائل المفاصل",
           "visible": true,
-          "order": 12
+          "order": 12,
+          "image": "exam-40.webp"
         }
       ],
       "description": "سحب عينات أو أنسجة محددة تحت توجيه التصوير للفحص المخبري أو النسيجي.",
@@ -280,37 +320,43 @@
           "id": "exam-41",
           "title": "تركيب قسطرة تصريف سائل البطن",
           "visible": true,
-          "order": 1
+          "order": 1,
+          "image": "exam-41.webp"
         },
         {
           "id": "exam-42",
           "title": "تركيب قسطرة تصريف سائل الصدر",
           "visible": true,
-          "order": 2
+          "order": 2,
+          "image": "exam-42.webp"
         },
         {
           "id": "exam-43",
           "title": "تركيب قسطرة تصريف الخراجات والقيح",
           "visible": true,
-          "order": 3
+          "order": 3,
+          "image": "exam-43.webp"
         },
         {
           "id": "exam-44",
           "title": "تركيب قسطرة تصريف أكياس الكلى والكبد",
           "visible": true,
-          "order": 4
+          "order": 4,
+          "image": "exam-44.webp"
         },
         {
           "id": "exam-45",
           "title": "تبديل ومتابعة القساطر تحت السونار",
           "visible": true,
-          "order": 5
+          "order": 5,
+          "image": "exam-45.webp"
         },
         {
           "id": "exam-46",
           "title": "تصريف التجمعات الحوضية تحت السونار",
           "visible": true,
-          "order": 6
+          "order": 6,
+          "image": "exam-46.webp"
         }
       ],
       "description": "إجراءات تصريف موجّهة بالسونار يتم تحديدها وفق الحالة واستطبابها الطبي.",

@@ -1,0 +1,25 @@
+{
+  "version": 15,
+  "branding": {
+    "clinicName": "عيادة د. منير الشكري",
+    "tagline": "الأشعة التشخيصية وسحب الخزع والعينات وتركيب القساطر"
+  },
+  "homepage": {
+    "heroTitle": "عيادة د. منير الشكري",
+    "heroSubtitle": "التصوير بالموجات فوق الصوتية والدوبلر والخزعات والإجراءات الموجهة بالسونار",
+    "heroButtonLabel": "احجز عبر واتساب",
+    "heroButtonLink": "https://wa.me/967782007272",
+    "vision": "تقديم رعاية تشخيصية دقيقة تسهم في اتخاذ القرار الطبي المناسب.",
+    "mission": "توفير فحوصات وإجراءات تصوير تشخيصي تركز على السلامة والوضوح واحترام احتياجات المرضى.",
+    "goals": "الجودة والدقة المهنية، وسهولة الوصول، والتواصل الواضح مع المريض.",
+    "stepsTitle": "ثلاث خطوات بسيطة قبل زيارتك"
+  },
+  "footer": {
+    "whatsapp": "782007272",
+    "phone": "738007272",
+    "email": "muneerradiologist@gmail.com",
+    "instagram": "https://www.instagram.com/drmuneer2025",
+    "youtube": "https://youtube.com/@muneerradiologist",
+    "facebook": "https://www.facebook.com/profile.php?id=61581075091310"
+  }
+}
