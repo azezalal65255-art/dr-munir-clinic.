@@ -1,6 +1,3 @@
 User-agent: *
-Allow: /
-Disallow: /admin.html
-Disallow: /exam-editor.html
-Disallow: /home-editor.html
+Allow: /dr-munir-clinic./
 Sitemap: https://azezalal65255-art.github.io/dr-munir-clinic./sitemap.xml
