@@ -1,0 +1,67 @@
+{
+  "sections": [
+    {
+      "id": "home-section-1",
+      "label": "عيادة د. منير الشكري",
+      "visible": true,
+      "title": "عيادة د. منير الشكري",
+      "order": 1
+    },
+    {
+      "id": "v8-booking",
+      "label": "اطلب موعدك بسهولة عبر واتساب",
+      "visible": true,
+      "title": "اطلب موعدك بسهولة عبر واتساب",
+      "order": 2
+    },
+    {
+      "id": "services",
+      "label": "خدمات العيادة الطبية",
+      "visible": true,
+      "title": "خدمات العيادة الطبية",
+      "order": 3
+    },
+    {
+      "id": "exams",
+      "label": "جميع الفحوصات حسب التخصص",
+      "visible": true,
+      "title": "جميع الفحوصات حسب التخصص",
+      "order": 4
+    },
+    {
+      "id": "v8-values",
+      "label": "رؤيتنا ورسالتنا وأهدافنا",
+      "visible": true,
+      "title": "رؤيتنا ورسالتنا وأهدافنا",
+      "order": 5
+    },
+    {
+      "id": "doctor",
+      "label": "د. منير الشكري",
+      "visible": true,
+      "title": "د. منير الشكري",
+      "order": 6
+    },
+    {
+      "id": "patient",
+      "label": "ثلاث خطوات بسيطة قبل زيارتك",
+      "visible": true,
+      "title": "ثلاث خطوات بسيطة قبل زيارتك",
+      "order": 7
+    },
+    {
+      "id": "faq",
+      "label": "إجابات عن أكثر الاستفسارات",
+      "visible": true,
+      "title": "إجابات عن أكثر الاستفسارات",
+      "order": 8
+    },
+    {
+      "id": "contact",
+      "label": "يسعدنا استقبال استفساراتك",
+      "visible": true,
+      "title": "يسعدنا استقبال استفساراتك",
+      "order": 9
+    }
+  ]
+}
