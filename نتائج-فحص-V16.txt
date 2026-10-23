@@ -1,0 +1,2 @@
+HTML pages with new CSS: 112; medical exam covers: 46; unique image files: 46; missing local refs: 0
+Browser and Firebase tests require deployment and user credentials.
