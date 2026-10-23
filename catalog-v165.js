@@ -1,0 +1,19 @@
+/* Catalog reads the same data file edited by control-center-v165; keep prebuilt HTML if fetch fails. */
+(()=>{'use strict';
+ const root=document.querySelector('#v15-catalog-root'),input=document.querySelector('#v15-search'),select=document.querySelector('#v15-category'),counter=document.querySelector('#v15-counter');if(!root)return;
+ const norm=t=>String(t||'').toLowerCase().replace(/[إأآ]/g,'ا').replace(/ى/g,'ي');
+ const safePhoto=p=>/^[a-z\d_-]+\.(?:webp|png|jpg|jpeg)$/i.test(p||'')?p:'photo-ultrasound.jpg';
+ const byId=id=>/^exam-\d{2}$/.test(id)?id+'.html':'exam-dynamic-v165.html?id='+encodeURIComponent(id);
+ function node(t,c,text){const e=document.createElement(t);if(c)e.className=c;if(text!=null)e.textContent=text;return e}
+ function draw(groups,detail){root.replaceChildren();select.replaceChildren();const all=node('option',null,'كل مجموعات الفحوصات');all.value='all';select.append(all);
+ for(const g of groups){if(g.visible===false)continue;const visible=(g.items||[]).filter(x=>x.visible!==false).sort((a,b)=>(a.order||0)-(b.order||0));const section=node('section','v15-group-section');section.id=g.id;const head=node('div','v15-group-heading');head.append(node('h2',null,g.title),node('span',null,visible.length+' فحصًا وإجراءً'));section.append(head);const grid=node('div','v15-grid');
+ for(const item of visible){const d=detail.find(x=>x.id===item.id)||{};const card=node('article','v15-card');card.dataset.title=item.title;const img=node('img');img.src=safePhoto(item.image||d.image);img.alt=d.imageAlt||'صورة طبية إيضاحية لفحص '+item.title;img.loading='lazy';img.decoding='async';img.width=760;img.height=505;
+ const body=node('div','v15-card-body');body.append(node('h3',null,item.title),node('p',null,d.why||d.short||'معلومات تعريفية عن الفحص والتحضير له عند الحاجة.'));const a=node('a','v15-detail-link','عرض التفاصيل ←');a.href=byId(item.id);body.append(a);card.append(img,body);grid.append(card)}section.append(grid);root.append(section);
+ const option=node('option',null,g.title);option.value=g.id;select.append(option);}
+ const hash=location.hash.slice(1);if(groups.some(g=>g.id===hash))select.value=hash;filter();}
+ function filter(){const query=norm(input?.value),which=select?.value||'all';let cnt=0;for(const s of root.querySelectorAll('.v15-group-section')){let inside=0;for(const c of s.querySelectorAll('.v15-card')){let show=(which==='all'||s.id===which)&&norm(c.dataset.title).includes(query);c.hidden=!show;if(show)inside++}s.hidden=!inside;cnt+=inside;}if(counter)counter.textContent=cnt+' فحصًا وإجراءً';}
+ input?.addEventListener('input',filter);select?.addEventListener('change',filter);
+ function contentMatches(groups){const expected=groups.filter(g=>g.visible!==false),current=[...root.querySelectorAll('.v15-group-section')];if(expected.length!==current.length)return false;return expected.every((g,i)=>{const e=current[i],items=(g.items||[]).filter(x=>x.visible!==false).sort((a,b)=>(a.order||0)-(b.order||0)),cards=[...e.querySelectorAll('.v15-card')];return e.id===g.id&&e.querySelector('h2')?.textContent===g.title&&cards.length===items.length&&cards.every((card,j)=>card.dataset.title===items[j].title&&card.querySelector('img')?.getAttribute('src')===(items[j].image||''))})}
+ function setupExisting(groups){select.replaceChildren();const all=node('option',null,'كل مجموعات الفحوصات');all.value='all';select.append(all);for(const g of groups){if(g.visible===false)continue;const opt=node('option',null,g.title);opt.value=g.id;select.append(opt)}filter()}
+ Promise.all([fetch('services-catalog.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()}),fetch('exam-content.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()})]).then(([c,e])=>{if(!Array.isArray(c.groups)||!Array.isArray(e.items))return;if(contentMatches(c.groups))setupExisting(c.groups);else draw(c.groups,e.items)}).catch(()=>{filter()});
+})();
