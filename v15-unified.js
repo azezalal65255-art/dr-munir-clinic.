@@ -1,0 +1,14 @@
+(()=>{'use strict';
+if(document.body.dataset.v15NoNav)return;
+const root=document.createElement('header');root.className='v15-nav';root.setAttribute('role','banner');
+const items=[['الرئيسية','index.html'],['الخدمات','services.html'],['الفحوصات','services-catalog.html'],['التوعية الطبية','awareness-topics.html'],['تواصل معنا','contact.html']];
+const file=location.pathname.split('/').pop()||'index.html';
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+root.innerHTML='<div class="v15-inner"><a class="v15-brand" href="index.html"><img src="logo.jpg" alt="شعار عيادة د. منير الشكري" width="58" height="56"><span>عيادة د. منير الشكري</span></a><nav id="v15-links" class="v15-links" aria-label="القائمة الرئيسية">'+items.map(([t,u])=>'<a href="'+u+'"'+(file===u?' aria-current="page"':'')+'>'+esc(t)+'</a>').join('')+'</nav><a class="v15-wa" href="https://wa.me/967782007272?text='+encodeURIComponent('السلام عليكم، أود الاستفسار عن موعد في عيادة الدكتور منير الشكري.')+'" target="_blank" rel="noopener noreferrer">واتساب للحجز</a><button type="button" class="v15-toggle" aria-label="فتح القائمة" aria-controls="v15-links" aria-expanded="false">☰</button></div>';
+const btn=root.querySelector('.v15-toggle');btn.addEventListener('click',()=>{let opened=root.dataset.open==='true';root.dataset.open=String(!opened);btn.setAttribute('aria-expanded',String(!opened));btn.setAttribute('aria-label',opened?'فتح القائمة':'إغلاق القائمة');btn.textContent=opened?'☰':'×'});
+root.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{root.dataset.open='false';btn.setAttribute('aria-expanded','false')}));
+document.body.prepend(root);document.body.classList.add('v15-ready');
+const soc=document.createElement('div');soc.className='v15-social';soc.setAttribute('aria-label','حسابات التواصل الرسمية');
+soc.innerHTML='<a href="https://www.instagram.com/drmuneer2025?vrfl=MXE3MXo5enFyeWI0dg==" target="_blank" rel="noopener noreferrer">◎ إنستجرام</a><a href="https://youtube.com/@muneerradiologist?si=jjr00hgDxJVaMS22" target="_blank" rel="noopener noreferrer">▶ يوتيوب</a><a href="https://www.facebook.com/profile.php?id=61581075091310" target="_blank" rel="noopener noreferrer">f فيسبوك</a><a href="mailto:muneerradiologist@gmail.com">✉ البريد الإلكتروني</a>';
+const foot=document.querySelector('footer')||document.getElementById('site-footer');if(foot)foot.prepend(soc);else document.body.append(soc);
+})();
