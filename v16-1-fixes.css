@@ -1,0 +1,56 @@
+/* V16.1: small scoped improvements. Keeps original V16 layout and interactions. */
+:root{--v161-white:#fff;--v161-green:#167c57}
+/* Accessible white typography specifically on dark blue surfaces. */
+.fx-top,.fx-top a,.fx-top span{color:#fff!important;opacity:1!important}
+.fx-contact{padding:0 0 62px!important}
+.fx-contact > .fx-container{padding-top:60px}
+.fx-contact h2.fx-title,.fx-contact h3,.fx-contact p,.fx-contact .fx-lead,
+.fx-contact .fx-contact-panel a,.fx-contact .fx-contact-panel p,
+.fx-contact .fx-contact-panel b,.fx-contact .fx-contact-panel div,
+.fx-contact .fx-contact-panel span,.fx-contact .fx-hours div,
+.fx-contact .fx-hours b{color:#fff!important;opacity:1!important;text-shadow:none!important}
+.fx-contact .fx-contact-panel a[href^="tel:"]{font-weight:900!important;font-size:clamp(17px,1.55vw,21px)!important;letter-spacing:.35px;text-decoration:underline!important;text-decoration-thickness:1px;text-underline-offset:4px;unicode-bidi:isolate;direction:ltr;display:inline-block}
+.fx-contact .fx-contact-panel a:focus-visible{outline:3px solid #d5f5e2;outline-offset:3px}
+.fx-contact .fx-contact-panel{background:rgba(255,255,255,.13)!important;border:1px solid rgba(255,255,255,.35)!important}
+.fx-contact .fx-hours div{border-color:rgba(255,255,255,.32)!important}
+.fx-contact .fx-contact-panel .fx-btn.green{background:#23894c!important;border-color:#23894c!important}
+.fx-contact .fx-contact-panel .fx-btn.alt{color:#11516a!important;background:#fff!important}
+.fx-contact .fx-map-shot{color:#fff!important}
+.fx-contact .fx-map-shot span{background:rgba(255,255,255,.95)!important;color:#125672!important;font-weight:800}
+.v8-booking-intro,.v8-booking-intro h2,.v8-booking-intro p,.v8-booking-intro strong,.v8-booking-intro span{color:#fff!important;opacity:1!important}
+.v15-footer h2,.v15-footer h3,.v15-footer p,.v15-footer a,.v15-footer .v15-copyright{color:#fff!important;opacity:1!important}
+.v15-footer a:focus-visible{outline:3px solid #b3f4d2;outline-offset:3px}
+/* Move the existing extra-links section above map and working-hours panels.
+   The nested placement keeps it adjacent to contact even if the V16 layout editor reorders sections. */
+.fx-contact > .v6-home-more{direction:rtl;text-align:right;margin:0!important;padding:52px 0 58px!important;
+ background:linear-gradient(125deg,#e5f6ee 0%,#f6fcfa 50%,#eaf6f0 100%)!important;
+ border-block:1px solid #cfe7dd!important;color:#174b42!important}
+.fx-contact > .v6-home-more h2{color:#105740!important;font-size:clamp(24px,3vw,34px)!important}
+.fx-contact > .v6-home-more p{color:#3c6259!important;font-size:15px!important;line-height:1.9}
+.fx-contact > .v6-home-more .v6-kicker{color:#167b57!important}
+.fx-contact > .v6-home-more .v6-home-more-grid a{color:#174d43!important;background:#fff!important;border:1px solid #cfdfd5!important;box-shadow:0 4px 14px #134e3310!important}
+.fx-contact > .v6-home-more .v6-home-more-grid b{font-size:14px!important;color:#175043!important}
+.fx-contact > .v6-home-more .v6-home-more-grid span{color:#17764f!important;font-size:12px!important}
+/* New geometry-only green/white backdrop for Vision, Mission, Goals. */
+#v8-values.v15-values-overrides{background:
+ radial-gradient(ellipse at 0% 0%,#d5eee0 0%,transparent 42%),
+ radial-gradient(ellipse at 100% 80%,#c9e9d9 0%,transparent 38%),
+ linear-gradient(125deg,#f3faf5 0%,#fff 46%,#e5f5ed 100%)!important;
+ border-block:2px solid #bfdfcd!important;border-inline:0!important;
+ box-shadow:none!important;border-radius:0!important}
+#v8-values.v15-values-overrides .v8-value{background:#fff!important;border:1px solid #cbe3d6!important;border-top:4px solid #258557!important;
+ box-shadow:0 7px 19px #13553b10!important}
+#v8-values.v15-values-overrides h2,#v8-values.v15-values-overrides h3{color:#115d40!important}
+#v8-values.v15-values-overrides p,#v8-values.v15-values-overrides li{color:#294d40!important;font-size:clamp(14px,1.2vw,16px)!important;line-height:1.95!important}
+#v8-values.v15-values-overrides .v8-subtitle{font-size:15px!important}
+#v8-values.v15-values-overrides .v8-value-symbol{background:#daf1e5!important;color:#126445!important}
+/* Credentials: added to doctor page only, not the homepage. */
+.v161-credentials ul{padding:0;margin:12px 0 0;list-style:none;display:grid;gap:10px}
+.v161-credentials li{position:relative;padding:8px 31px 8px 10px;border-bottom:1px solid #e4efeb;color:#1f4e43;font-size:15px;line-height:1.85}
+.v161-credentials li:before{content:'✓';position:absolute;right:4px;top:9px;font-size:15px;font-weight:bold;color:#17865c}
+@media(max-width:760px){.fx-contact>.fx-container{padding-top:42px}
+ .fx-contact>.v6-home-more{padding:38px 0 43px!important}
+ .fx-contact>.v6-home-more .v6-home-more-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .fx-contact>.v6-home-more .v6-home-more-grid a{min-height:91px;padding:13px!important}
+ .fx-contact .fx-contact-panel a[href^="tel:"]{font-size:20px!important}}
+@media(max-width:400px){.fx-contact>.v6-home-more .v6-home-more-grid{grid-template-columns:1fr}}
